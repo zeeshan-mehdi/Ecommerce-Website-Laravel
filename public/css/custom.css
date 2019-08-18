@@ -1,0 +1,55 @@
+/* .main{
+    width: 50%;
+    position: absolute;
+    top:50px;
+    margin: auto;
+}
+
+
+
+.content{
+    margin-left: 20px;
+    margin-right:20px;
+}
+
+.thumb{
+    width:50%;
+    margin: auto;
+    height: 50%;
+}
+
+.post{
+    width: 100%;
+    text-align: center;
+} */
+
+.img{
+    width: 200px;
+    height: 200px;
+}
+.msg{
+    display: none;
+}
+
+.item{
+    margin:5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
