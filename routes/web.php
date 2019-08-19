@@ -19,6 +19,7 @@ Route::get('/', 'PagesController@homePage');
 Route::get('/about', 'PagesController@aboutPage');
 
 Route::get('/checkout', 'PagesController@checkoutPage');
+Route::get('/posts/search', 'PagesController@searchPage');
 
 Route::get('/elements','ElementController@fetchElements');
 

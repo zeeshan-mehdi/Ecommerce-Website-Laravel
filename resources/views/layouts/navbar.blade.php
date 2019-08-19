@@ -65,10 +65,10 @@
                     </li>
                 @endguest
 
-                <form class="form-inline my-2 my-lg-0">
+                <form class="form-inline my-2 my-lg-0" action="/posts/search" method="GET">
                     <a class="nav-link cart" href="/cart">Shopping Cart <span
                                 class="badge badge-dark">{{session()->has('cart')?session('qty'):''}}</span></a>
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control mr-sm-2" name="search-input" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </ul>

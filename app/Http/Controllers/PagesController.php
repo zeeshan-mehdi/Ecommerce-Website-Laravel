@@ -53,6 +53,16 @@ class PagesController extends Controller
     }
 
 
+    public function searchPage(Request $request){
+
+        $searchString = $request->input('search-input');
+
+
+        $posts = Post::where('title','like',"%$searchString%")->get();
+
+        return view('search')->with('posts',$posts);
+    }
+
     public function footer(){
         return view('layouts.footer');
     }
