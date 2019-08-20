@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <style>
         * {
@@ -44,15 +37,15 @@
         #about {
             color: white;
             display: inline-block;
-            margin-left: 50px;
+            margin-left: 20px;
         }
 
         #appStore{
 
             display: inline-flex;
-            margin-left: 500px;
-            width: 140px;
-            height: 40px;
+            margin-left: 900px;
+            width: 150px;
+            height: 50px;
             font-size: 15px;
             background: black;
             color: white;
@@ -70,8 +63,8 @@
 
             display: inline-flex;
             margin-left: 10px;
-            width: 120px;
-            height: 40px;
+            width: 130px;
+            height: 50px;
             font-size: 15px;
             background: black;
             color: white;
@@ -82,18 +75,12 @@
             float: left;
         }
 
-
-
-
         #buttons button,label:hover{
             cursor: pointer;
         }
 
 
     </style>
-</head>
-<body>
-
 <footer>
     <div class="row">
         <div id="text" class="col">
@@ -137,5 +124,3 @@
 
 
 </footer>
-</body>
-</html>

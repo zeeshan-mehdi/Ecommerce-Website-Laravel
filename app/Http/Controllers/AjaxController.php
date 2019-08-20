@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Address;
+use App\Deal;
 use App\Model\EarningModel;
 use App\Orders;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Model\Cart;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use function MongoDB\BSON\toJSON;
+use PhpParser\Node\Expr\Array_;
 use Psy\Util\Json;
 
 
@@ -63,6 +66,42 @@ class AjaxController extends Controller
         $intId = (int)$id;
 
         $post = Post::find($intId);
+
+        $q = $post->quantity;
+        $q--;
+
+        $request->session()->has('cart') ? $cart = session('cart') : $cart = null;
+
+        if (!$cart)
+            $cart = new Cart();
+
+        $cart->addProduct($intId, $post);
+
+        $request->session()->put('cart', $cart);
+
+
+        $post->quantity = $q;
+        $post->save();
+
+
+        return  count($cart->item);
+
+
+    }
+
+
+    public function dealsCart(Request $request)
+    {
+
+        $id = $request->id;
+
+        $intId = (int)$id;
+
+        $deal = Deal::all()->where('item',$id)->first();
+        $post = Post::find($intId)->first();
+
+        if($deal->discount!==null)
+            $post->price = $deal->discount;
 
         $q = $post->quantity;
         $q--;
@@ -150,6 +189,15 @@ class AjaxController extends Controller
 
         $post = Post::find($id);
 
+//        try {
+//
+//            $deal = Deal::all()->where('item', $id)->first();
+//
+//            if ($deal !== null)
+//                $post->price = $deal->price;
+//        }catch (\Exception $e){
+//        }
+
         $q = $post->quantity;
         $q++;
 
@@ -176,6 +224,15 @@ class AjaxController extends Controller
         session(['total' => $cart->totalPrice]);
 
         $post = Post::find($id);
+
+//        try {
+//
+//            $deal = Deal::all()->where('item', $id)->first();
+//
+//            if ($deal !== null)
+//                $post->price = $deal->price;
+//        }catch (\Exception $e){
+//        }
 
         $q = $post->quantity;
         $q--;
@@ -359,6 +416,19 @@ class AjaxController extends Controller
             return json_encode($address);
         }
         return null;
+    }
+
+
+    public function fetchAllCategories(Request $request){
+        $categories = Post::select('category')->distinct()->get();
+        return $categories;
+
+    }
+
+    public function fetchAllPosts(Request $request){
+        $posts = Post::all();
+
+        return $posts;
     }
 
 

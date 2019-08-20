@@ -9,6 +9,7 @@
 namespace App\Model;
 
 
+use App\Deal;
 use App\Post;
 
 class Cart
@@ -61,9 +62,22 @@ class Cart
         $item_ = $cart->item[$id];
         $item_['quantity']++;
 
+
+
         $unitPrice = Post::find((int)$id);
 
-        $amount = str_replace(',','',$unitPrice->price);
+        $unitPrice = $unitPrice->price;
+
+        try {
+
+            $deal = Deal::all()->where('item', $id)->first();
+
+            if ($deal !== null)
+                $unitPrice = $deal->discount;
+        } catch (\Exception $e) {
+        }
+
+        $amount = str_replace(',','',$unitPrice);
 
         $amount =(int) str_replace('$','',$amount);
 
@@ -92,7 +106,18 @@ class Cart
             $cart = $this->removeItem($id,$cart);
             $unitPrice = Post::find((int)$id);
 
-            $amount = str_replace(',','',$unitPrice->price);
+            $unitPrice = $unitPrice->price;
+
+            try {
+
+                $deal = Deal::all()->where('item', $id)->first();
+
+                if ($deal !== null)
+                    $unitPrice = $deal->discount;
+            } catch (\Exception $e) {
+            }
+
+            $amount = str_replace(',','',$unitPrice);
 
             $amount =(int) str_replace('$','',$amount);
 
@@ -106,8 +131,18 @@ class Cart
         }
 
         $unitPrice = Post::find((int)$id);
+        $unitPrice = $unitPrice->price;
 
-        $amount = str_replace(',','',$unitPrice->price);
+        try {
+
+            $deal = Deal::all()->where('item', $id)->first();
+
+            if ($deal !== null)
+                $unitPrice = $deal->discount;
+        } catch (\Exception $e) {
+        }
+
+        $amount = str_replace(',','',$unitPrice);
 
         $amount =(int) str_replace('$','',$amount);
 

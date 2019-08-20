@@ -8,6 +8,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
@@ -16,7 +18,17 @@
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
+                    <a class="nav-link" href="/deals">Deals</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="posts/categories" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Categories
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right categories" aria-labelledby="navbarDropdown">
+
+                    </div>
+
                 </li>
             </ul>
 
@@ -68,10 +80,12 @@
                 <form class="form-inline my-2 my-lg-0" action="/posts/search" method="GET">
                     <a class="nav-link cart" href="/cart">Shopping Cart <span
                                 class="badge badge-dark">{{session()->has('cart')?session('qty'):''}}</span></a>
-                    <input class="form-control mr-sm-2" name="search-input" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control mr-sm-2" name="search-input" type="search" placeholder="Search"
+                           aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </ul>
+            <a class="btn btn-primary {{auth()->id()==4? 'visible' : 'invisible'}}" style="margin-left: 10px;" href="/dashboard">Dashboard</a>
 
         </div>
     </div>

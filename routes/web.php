@@ -30,6 +30,8 @@ Route::resource('posts','PostsController');
 
 Route::get('orders','PagesController@ordersPage');
 Route::post('orders',['as'=>'ordersPage','uses'=>'PagesController@ordersPage']);
+Route::get('/posts/categories/{category}','PagesController@categoryPage');
+Route::get('/footer', 'PagesController@footer');
 
 Route::get('stripe', 'StripePaymentController@stripe');
 
@@ -50,23 +52,30 @@ Route::post('/cart/item-minus', 'AjaxController@minusItem');
 Route::post('/cart/item-delete', 'AjaxController@deleteItem');
 Route::post('/cart/setzero','AjaxController@setPriceZero');
 Route::post('/user/{}','PagesController@showProfile');
-
+Route::get('/deals','DealsController@deals');
 
 //dashboard Routes
 
 
 Route::get('/dashboard', 'DashboardController@index');
 
-Route::get('/dashboard/charts','DashboardController@charts');
 Route::get('/dashboard/products','DashboardController@products');
 Route::get('/dashboard/orders','DashboardController@orders');
 Route::get('/dashboard/products/new', 'PagesController@newPostPage');
-Route::get('/footer', 'PagesController@footer');
+
+
+
+//deals
+Route::get('/dashboard/deals','DealsController@index');
+Route::get('/dashboard/deals/new', 'DealsController@newDeal');
+Route::post('/dashboard/deals/store', 'DealsController@store');
+
 
 
 //Ajax Controller Routes
 
 Route::post('/posts/cart','AjaxController@cart');
+Route::post('/deals/cart','AjaxController@dealsCart');
 
 Route::post('/price','AjaxController@price');
 
@@ -82,4 +91,6 @@ Route::get('/dashboard/stock/sales','AjaxController@getSalesCount');
 Route::get('/dashboard/products/delete','AjaxController@deleteProduct');
 Route::get('/dashboard/products/earnings','AjaxController@getEarningsByDate');
 Route::get('/dashboard/products/categories','AjaxController@getTopCategories');
+Route::get('/posts/fetch/categories','AjaxController@fetchAllCategories');
+Route::get('/posts/fetch/posts','AjaxController@fetchAllPosts');
 

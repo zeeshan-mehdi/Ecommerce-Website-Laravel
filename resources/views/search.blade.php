@@ -12,7 +12,7 @@
         Something went wrong
     </div>
 
-    @if($posts)
+    @if(count($posts)>0)
 
         @foreach($posts as $post)
 
@@ -33,9 +33,9 @@
             <hr>
             <br>
         @endforeach
+    @else
+        <div class="text-danger text-xl-center font-weight-bold">No Post Found With This title</div>
     @endif
-
-
     <script type="text/javascript">
         $.ajaxSetup({
             headers: {
@@ -86,6 +86,8 @@
 
             });
         });
+
+
 
 
     </script>
