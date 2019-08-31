@@ -7,11 +7,19 @@
     <div class="alert alert-danger" style="display:none;">
         Something went wrong
     </div>
+
+    <style>
+        .card:hover{
+            -webkit-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+            -moz-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+            box-shadow:-1px 9px 40px -12px rgba(0,0,0,0.75);
+        }
+    </style>
     @if($post)
 
         <div class="row" style="max-height: 300px;">
             <div class="col img-thumbnail" style="max-width: 300px;">
-                <img src="/storage/images/{{$post->image}}" alt="Lights" style="width:100%">
+                <img src="/storage/images/{{$post->image}}" alt="Lights" style="width:100%;max-height: 300px">
             </div>
 
             <div class="col">
@@ -37,7 +45,7 @@
                     <div class="card item mx-auto" style="min-width:250px;max-width: 250px;margin:5px;  ">
 
                         <a href="/posts/{{$item->id}}">
-                            <img class="card-img-top" src="/storage/images/{{$item->image}}" alt="Card image cap"></a>
+                            <img class="card-img-top" src="/storage/images/{{$item->image}}" alt="Card image cap" style="max-height: 300px"></a>
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">{{$item->title}}</h5>
                             {{--<p class="card-text">@php echo substr($item->description,0,5) @endphp</p>--}}
@@ -98,6 +106,24 @@
                         }
 
                     });
+                });
+
+                (document).ready(function () {
+                    $('.card').hover(
+                        function () {
+                            $(this).animate(
+                                {
+                                    marginTop:"-1%"
+                                },200
+                            )
+                        },
+                        function () {
+                            $(this).animate(
+                                {
+                                    marginTop:"0%"
+                                },200                           )
+                        }
+                    );
                 });
 
             </script>

@@ -101,7 +101,13 @@ class PagesController extends Controller
            return redirect('/login');
         }
 
+    }
 
+    public function categoryPage(Request $request,$category){
+
+        $posts = Post::where('category',$category)->paginate(12);
+
+        return view('index')->with('posts',$posts);
     }
 
 }

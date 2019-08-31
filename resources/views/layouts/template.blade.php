@@ -27,7 +27,12 @@
 
         </script>
 
+
         @yield('content')
+<<<<<<< HEAD
+=======
+
+>>>>>>> 44757ff39d16c4b79c0ff934022c1cc4cc0e1baf
 </div>
 @include('layouts.footer')
 </body>

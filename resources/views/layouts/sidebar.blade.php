@@ -54,6 +54,26 @@
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Deals Mangement
+    </div>
+
+
+
+    <li class="nav-item">
+        <a class="nav-link" href="/dashboard/deals">
+            <i class="fas fa-store"></i>
+            <span>Deals</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="/dashboard/deals/new">
+            <i class="fas fa-plus-square"></i>
+            <span>New Deal</span></a>
+    </li>
+
+
     <!-- Sidebar Toggler (Sidebar) -->
     {{--<div class="text-center d-none d-md-inline">--}}
         {{--<button class="rounded-circle border-0" id="sidebarToggle"></button>--}}
