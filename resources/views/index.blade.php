@@ -17,7 +17,7 @@
             <div class="row ">
             @foreach($chunk as $item)
 
-                <div class="card item mx-auto" style="min-width:250px;max-width: 250px;margin:5px;  ">
+                <div class="card item mx-auto overlay zoom" style="min-width:250px;max-width: 250px;margin:5px;  ">
 
                     <a href="/posts/{{$item->id}}">
                     <img class="card-img-top" src="/storage/images/{{$item->image}}" alt="Card image cap"></a>
