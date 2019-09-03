@@ -43,8 +43,8 @@ class PostsController extends Controller
             'title'=>'required',
             'desc'=>'required',
             'category'=>'required',
-            'price'=>'required',
-            'image'=>'image|nullable|max:1999'
+            'price'=>'required'
+//            'image'=>'image|nullable|max:1999'
         ]);
 
         $nameToStore =null;
@@ -81,6 +81,7 @@ class PostsController extends Controller
         $post->vendor = $request->input('vender');
         $post->category = $request->input('category');
         $post->total = $request->input('quantity');
+        $post->reviews = "No Review Yet";
         $post->image=$request->input('image-url');;
         $post->save();
 
