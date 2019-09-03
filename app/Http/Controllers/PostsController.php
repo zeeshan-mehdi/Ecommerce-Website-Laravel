@@ -83,6 +83,8 @@ class PostsController extends Controller
 
         $post->total = $request->input('quantity');
         $post->reviews = "No Review Yet";
+        $post->rating = "No Rating Yet";
+
         $post->image=$request->input('image-url');;
         $post->save();
 
