@@ -108,7 +108,7 @@
                 var isLoggedIn = "{{auth()->user()===null ? false: true}}";
                 console.log(isLoggedIn);
                 if (!isLoggedIn) {
-                    window.location.href = "http://ecommerce-app.test/login";
+                    window.location.href = "/login";
                     return;
                 }
                 //window.url = "http://ecommerce-app.test/login";
@@ -127,7 +127,7 @@
                         street:$('#address').val()},
                     success: function (resp) {
                         console.log(resp);
-                        window.location.href = "http://ecommerce-app.test/stripe";
+                        window.location.href = "/stripe";
                     },
 
                     error: function (err) {
