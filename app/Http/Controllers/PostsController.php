@@ -80,6 +80,7 @@ class PostsController extends Controller
         $post->quantity = $request->input('quantity');
         $post->vendor = $request->input('vender');
         $post->category = $request->input('category');
+
         $post->total = $request->input('quantity');
         $post->reviews = "No Review Yet";
         $post->image=$request->input('image-url');;
