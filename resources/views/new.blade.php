@@ -62,7 +62,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="image-url">Price </label>
+                            <label for="image-url">Image Url </label>
                             <input type="text" name="image-url" placeholder="e.g https//:ab.png" class="form-control" id="image-url"/>
                         </div>
 
