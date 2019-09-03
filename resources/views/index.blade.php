@@ -28,7 +28,7 @@
                 <div class="card item mx-auto overlay zoom" style="min-width:250px;max-width: 250px;margin:5px;  ">
 
                     <a href="/posts/{{$item->id}}">
-                    <img class="card-img-top" src="/storage/images/{{$item->image}}" alt="Card image cap" style="max-height: 300px"></a>
+                    <img class="card-img-top" src="{{$item->image}}" alt="Card image cap" style="max-height: 300px"></a>
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">{{$item->title}}</h5>
                         {{--<p class="card-text">@php echo substr($item->description,0,5) @endphp</p>--}}

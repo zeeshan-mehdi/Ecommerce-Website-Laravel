@@ -81,7 +81,7 @@ class PostsController extends Controller
         $post->vendor = $request->input('vender');
         $post->category = $request->input('category');
         $post->total = $request->input('quantity');
-        $post->image=$nameToStore;
+        $post->image=$request->input('image-url');;
         $post->save();
 
         return redirect('/dashboard/products');

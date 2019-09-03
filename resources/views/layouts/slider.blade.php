@@ -10,23 +10,23 @@
     <!-- The slideshow -->
     <div class="carousel-inner" style="width: 100%;">
         <div class="carousel-item active">
-            <img src="{{asset('/storage/slider/slider-1.webp')}}"/>
+            <img src="http://laz-img-cdn.alicdn.com/images/ims-web/TB1FAuTeRr0gK0jSZFnXXbRRXXa.jpg"/>
         </div>
         <div class="carousel-item">
-            <img src="{{asset('/storage/slider/slider-2.jpg')}}"/>
+            <img src="https://laz-img-cdn.alicdn.com/images/ims-web/TB17mpIe8r0gK0jSZFnXXbRRXXa.jpg_1200x1200.jpg"/>
         </div>
         <div class="carousel-item">
-            <img src="{{asset('/storage/slider/slider-7.jpg')}}"/>
+            <img src="http://laz-img-cdn.alicdn.com/images/ims-web/TB1_QkfeRr0gK0jSZFnXXbRRXXa.jpg"/>
         </div>
 
         <div class="carousel-item">
-            <img src="{{asset('/storage/slider/slider-3.webp')}}"/>
+            <img src="http://laz-img-cdn.alicdn.com/images/ims-web/TB1BnVIe8r0gK0jSZFnXXbRRXXa.jpg"/>
         </div>
         <div class="carousel-item">
-            <img src="{{asset('/storage/slider/slider-5.webp')}}"/>
+            <img src="http://laz-img-cdn.alicdn.com/images/ims-web/TB1J85TeRr0gK0jSZFnXXbRRXXa.png"/>
         </div>
         <div class="carousel-item">
-            <img src="{{asset('/storage/slider/slider-4.webp')}}"/>
+            <img src="http://laz-img-cdn.alicdn.com/images/ims-web/TB1F8qUeRr0gK0jSZFnXXbRRXXa.jpg"/>
 
         </div>
     </div>

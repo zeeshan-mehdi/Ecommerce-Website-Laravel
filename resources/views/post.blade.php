@@ -19,7 +19,7 @@
 
         <div class="row" style="max-height: 300px;">
             <div class="col img-thumbnail" style="max-width: 300px;">
-                <img src="/storage/images/{{$post->image}}" alt="Lights" style="width:100%;max-height: 300px">
+                <img src="{{$post->image}}" alt="Lights" style="width:100%;max-height: 300px">
             </div>
 
             <div class="col">

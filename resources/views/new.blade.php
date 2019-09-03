@@ -60,6 +60,12 @@
                             <label for="file">Upload Image </label>
                             <input type="file" name="image" class="form-control-file" id="file"/>
                         </div>
+
+                        <div class="form-group">
+                            <label for="image-url">Price </label>
+                            <input type="text" name="image-url" placeholder="e.g https//:ab.png" class="form-control" id="image-url"/>
+                        </div>
+
                         <div class="form-group">
                             <label for="price">Price </label>
                             <input type="text" name="price" placeholder="e.g 200$" class="form-control" id="price"/>

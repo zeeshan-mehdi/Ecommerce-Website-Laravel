@@ -13,7 +13,7 @@ class AddCategoryToPostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::table('posts', function (Blueprint $table) {
             $table->string('category');
         });
     }
